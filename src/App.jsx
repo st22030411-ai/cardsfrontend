@@ -48,7 +48,8 @@ function App() {
   async function handleCreateCard(newCard) {
     try {
       const createdCard = await api.createCard(newCard);
-      setCards((cards) => [createdCard, ...cards]);
+      setCards((cards) => [createdCard.card, ...cards]);
+
     } catch (error) {
       console.error(error);
     }
